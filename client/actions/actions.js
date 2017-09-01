@@ -6,7 +6,7 @@
  */
 
 export const ADD_TODO = 'ADD_TODO';
-export const COMPLETE_TODO = 'COMPLETE_TODO';
+export const TOGGLE_TODO = 'TOGGLE_TODO';
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 
 /*
@@ -22,15 +22,20 @@ export const VisibilityFilters = {
 /*
  * action 创建函数
  */
+let nextTodoId = 0;
+export const addTodo = (text) => {
+    return {
+        type: 'ADD_TODO',
+        id: nextTodoId++,
+        text
+    }
+};
 
-export function addTodo(text) {
-    return { type: ADD_TODO, text }
-}
 
-export function completeTodo(index) {
-    return { type: COMPLETE_TODO, index }
-}
-
-export function setVisibilityFilter(filter) {
-    return { type: SET_VISIBILITY_FILTER, filter }
+/* 触发 */
+export const toggleTodo = (id) => {
+    return {
+        type: "TOGGLE_TODO",
+        id
+    }
 }

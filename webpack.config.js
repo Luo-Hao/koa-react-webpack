@@ -38,6 +38,7 @@ const config = {
             },
         ]
     },
+    devtool: 'source-map',
     plugins: [
         new CleanWebpackPlugin(['web'], {
             root: __dirname,

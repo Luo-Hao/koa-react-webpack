@@ -7,9 +7,8 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import Routes from './routes';
-import todo from './reducers'
-
-const store = createStore(todo);
+import todoApp from './reducers'
+const store = createStore(todoApp);
 
 ReactDOM.render((
         <Provider store={store}>

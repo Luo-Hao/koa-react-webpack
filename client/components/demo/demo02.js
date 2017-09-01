@@ -3,6 +3,9 @@
  */
 
 import React,{ Component } from 'react';
+import { connect } from 'react-redux';
+
+import AddTodo from '../../containers/AddTodo'
 
 function WarningBanner(props) {
     if (!props.warn) {
@@ -36,6 +39,7 @@ class Page extends Component {
                 <button onClick={this.handleToggleClick}>
                     {this.state.showWarning ? 'Hide' : 'Show'}
                 </button>
+                <AddTodo />
             </div>
         );
     }
